@@ -1,0 +1,32 @@
+---
+layout: blog-index
+title: Thoughts on diversity and inclusion
+subtitle: from our Founder Nancy Roberts
+banner-type: customer
+---
+
+<section id="single-column-page">
+  <div class="container text-center">
+    <h2 class="heading">All things diversity, equity and inclusion, <br />written and curated by Umbrella Founder Nancy Roberts
+      <span class="divider-center"></span>
+    </h2>
+
+    <div class="row card-deck">
+    {% for post in site.posts %}
+      <article class="blog-post testimonial-wrapp col-12 col-md-6 col-lg-4">
+        <div class="testimonial-text">
+          <div class="card-header">
+            <h3 class="text-center">
+              <a class="stretched-link" href="{{ post.url }}">
+                {{ post.title }}
+              </a>
+            </h3>
+          </div>
+          <p class="card-date"><em>{{ post.date | date: '%-d %B %Y' }}</em></p>
+          <p class="card-body">{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
+          <a class="button gradient-btn w-100 card-footer" href="{{ post.url }}">Read more</a>
+        </div>
+      </article>
+    {% endfor %}
+</div>
+</section>

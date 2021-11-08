@@ -1,0 +1,12 @@
+---
+---
+
+// Must define these two variables here because Jekyll and Sass fight over correct formatting (can't @include files that contain the Liquid header material)
+$image-path: "{{ site.url }}/images/";
+$font-path: "{{ site.url }}/fonts/";
+
+@import "vendor/bundle.min";
+@import "variables";
+@import "vendor/owl.carousel.min";
+@import "vendor/wow";
+@import "main-source";
