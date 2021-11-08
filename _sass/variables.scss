@@ -1,0 +1,92 @@
+$white: #ffffff;
+$black: #1c1c1b;
+$red: #ff6a5a;
+$green: #73c8a9;
+$blue: #6a8daa;
+$orange: #ffb350;
+$brown: #8E6A49;
+
+$light-gray: #d2d3db;
+$mid-gray: #9a9bad;
+$dark-gray: #65667c;
+$darkest-gray: #373844;
+
+$primary: $green;
+$secondary: $darkest-gray;
+$tertiary: $orange;
+$info: $blue;
+
+$light: $light-gray;
+$light-primary: #a7d3bC;
+$light-tertiary: lighten($tertiary, 10%);
+
+$font-size-base: 1 rem;
+
+// Fonts
+@font-face {
+  font-family: 'Futura';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url($font-path + 'futura-book.woff2') format('woff2'), url($font-path + 'futura-book.woff') format('woff')
+}
+@font-face {
+  font-family: 'Futura Italic';
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+  src: url($font-path + 'futura-book-oblique.woff2') format('woff2'), url($font-path + 'futura-book-oblique.woff') format('woff')
+}
+@font-face {
+  font-family: 'Futura Bold';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url($font-path + 'futura-demi.woff2') format('woff2'), url($font-path + 'futura-demi.woff') format('woff')
+}
+@font-face {
+  font-family: 'Futura Bold Italic';
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+  src: url($font-path + 'futura-demi-oblique.woff2') format('woff2'), url($font-path + 'futura-demi-oblique.woff') format('woff')
+}
+@font-face {
+  font-family: 'Mont';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url($font-path + 'mont-semi-bold.woff2') format('woff2'), url($font-path + 'mont-semi-bold.woff') format('woff')
+}
+@font-face {
+  font-family: 'Mont';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url($font-path + 'mont-heavy.woff2') format('woff2'), url($font-path + 'mont-heavy.woff') format('woff')
+}
+
+$font-family-body: Futura, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+$font-family-heading: Mont, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+
+// Mixins
+
+@mixin text-with-2px-dark-shadow {
+  text-shadow: 0 0 2px $darkest-gray;
+}
+
+@mixin background-gradient-primary {
+  background-image: -webkit-gradient(linear, left top, right top, from($primary), color-stop(51%, $light-primary), to($primary));
+  background-image: -webkit-linear-gradient(left, $primary 0%, $light-primary 51%, $primary 100%);
+  background-image: -moz-linear-gradient(left, $primary 0%, $light-primary 51%, $primary 100%);
+  background-image: -o-linear-gradient(left, $primary 0%, $light-primary 51%, $primary 100%);
+  background-image: linear-gradient(to right, $primary 0%, $light-primary 51%, $primary 100%);
+}
+
+@mixin background-gradient-tertiary {
+  background-image: -webkit-gradient(linear, left top, right top, from($tertiary), color-stop(51%, $light-tertiary), to($tertiary));
+  background-image: -webkit-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
+  background-image: -moz-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
+  background-image: -o-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
+  background-image: linear-gradient(to right, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
+}
