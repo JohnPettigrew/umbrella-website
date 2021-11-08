@@ -2,10 +2,12 @@
 ---
 
 // Must define these two variables here because Jekyll and Sass fight over correct formatting (can't @include files that contain the Liquid header material)
+$bootstrap-icons-font-src: url("{{ site.url }}/fonts/bootstrap-icons.woff2?a97b3594ad416896e15824f6787370e0") format("woff2"), url("{{ site.url }}/fonts/bootstrap-icons.woff?a97b3594ad416896e15824f6787370e0") format("woff");
 $file-path: "{{ site.url }}/files/";
 $font-path: "{{ site.url }}/fonts/";
 $image-path: "{{ site.url }}/images/";
 
 @import "variables";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 @import "main-source";

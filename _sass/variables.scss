@@ -12,12 +12,12 @@ $dark-gray: #65667c;
 $dark: #373844;
 
 $primary: $green;
-$secondary: $dark;
-$tertiary: $orange;
+$secondary: $orange;
+$tertiary: $dark;
 $info: $blue;
 
 $light-primary: #a7d3bC;
-$light-tertiary: lighten($tertiary, 10%);
+$light-secondary: lighten($secondary, 10%);
 
 $font-size-base: 1rem;
 
@@ -82,10 +82,10 @@ $font-family-heading: Mont, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   background-image: linear-gradient(to right, $primary 0%, $light-primary 51%, $primary 100%);
 }
 
-@mixin background-gradient-tertiary {
-  background-image: -webkit-gradient(linear, left top, right top, from($tertiary), color-stop(51%, $light-tertiary), to($tertiary));
-  background-image: -webkit-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
-  background-image: -moz-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
-  background-image: -o-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
-  background-image: linear-gradient(to right, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
+@mixin background-gradient-secondary {
+  background-image: -webkit-gradient(linear, left top, right top, from($secondary), color-stop(51%, $light-secondary), to($secondary));
+  background-image: -webkit-linear-gradient(left, $secondary 0%, $light-secondary 51%, $secondary 100%);
+  background-image: -moz-linear-gradient(left, $secondary 0%, $light-secondary 51%, $secondary 100%);
+  background-image: -o-linear-gradient(left, $secondary 0%, $light-secondary 51%, $secondary 100%);
+  background-image: linear-gradient(to right, $secondary 0%, $light-secondary 51%, $secondary 100%);
 }

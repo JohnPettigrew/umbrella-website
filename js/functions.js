@@ -1,3 +1,10 @@
+(function () {
+  'use strict'
+  document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
+    document.querySelector('.offcanvas-collapse').classList.toggle('open')
+  })
+})()
+
 function currentProSubPrice() {
   let basePrice = ($('#annually').hasClass('active') ? 39 : 44);
   let incrementPrice = ($('#annually').hasClass('active') ? 30 : 35);

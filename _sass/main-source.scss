@@ -7,6 +7,7 @@ body {
   direction: ltr;
   line-height: 1.5;
   letter-spacing: 0;
+  padding-top: 80px;
 
   ::selection {
     background: $primary !important;
@@ -122,6 +123,12 @@ nav.navbar {
       a {
         color: $white;
         text-decoration: none;
+        padding-bottom: 3px;
+        border-bottom: 3px solid $dark;;
+
+        &:hover {
+          border-color: $primary;
+        }
       }
 
       ul.dropdown-menu {
@@ -135,9 +142,79 @@ nav.navbar {
           a.dropdown-item {
             color: $dark;
             width: 100%;
+            border: none;
 
             &:first-of-type {
               border-radius: $dropdown-border-radius;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .offcanvas-collapse {
+      position: fixed;
+      top: 80px; /* Height of navbar */
+      bottom: 0;
+      left: 100%;
+      width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      overflow-y: auto;
+      visibility: hidden;
+      background-color: $secondary;
+      transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+
+      &.open {
+        visibility: visible;
+        transform: translateX(-100%);
+      }
+
+      ul.navbar-nav {
+        margin-left: auto;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        padding: 80px 0;
+
+        li {
+          padding: 0 30px;
+          text-align: right;
+
+          a {
+            &:hover {
+              background-color: inherit;
+              text-decoration: underline;
+            }
+          }
+
+          ul.dropdown-menu {
+            padding: 0;
+            background-color: inherit;
+            border: none;
+            font-size: 1.5rem;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            li {
+              width: 100%;
+              padding: 0;
+
+
+              a.dropdown-item {
+                color: $white;
+                width: 100%;
+
+                &:hover {
+                }
+              }
             }
           }
         }
