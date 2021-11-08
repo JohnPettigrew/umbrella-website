@@ -1,0 +1,147 @@
+body {
+  font-family: $font-family-body;
+  font-size: $font-size-base;
+  font-weight: normal;
+  color: $dark;
+  overflow-x: hidden;
+  direction: ltr;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  ::selection {
+    background: $primary !important;
+    opacity: 0.63;
+    color: $white;
+  }
+
+  a,
+  a:focus,
+  a:hover {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button:active,
+  button:focus,
+  input:active,
+  input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  small {
+    font-size: 60%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-family-heading;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.875rem;
+  }
+
+  hr {
+    &.logo-lines {
+      border-width: 5px;
+      border-bottom: 0 !important;
+      margin: 5px 0;
+
+      &.border-first {
+        border-color: $red;
+      }
+
+      &.border-second {
+        border-color: $orange;
+      }
+
+      &.border-third {
+        border-color: $green;
+      }
+    }
+  }
+}
+
+nav.navbar {
+  width: 100vw;
+  height: 80px;
+  background-color: $dark;
+
+  .navbar-brand {
+    margin: 10px 0;
+    padding: 0;
+    width: 200px;
+    height: 40px;
+    min-width: 200px;
+    min-height: 40px;
+    background-image: url($image-path + 'umbrella-logo-light.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  ul.navbar-nav {
+    margin-left: auto;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+      padding: 0 10px;
+
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+
+      ul.dropdown-menu {
+        padding: 0;
+
+        li {
+          width: 100%;
+          padding: 0;
+
+
+          a.dropdown-item {
+            color: $dark;
+            width: 100%;
+
+            &:first-of-type {
+              border-radius: $dropdown-border-radius;
+            }
+          }
+        }
+      }
+    }
+  }
+}

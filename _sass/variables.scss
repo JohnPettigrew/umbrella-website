@@ -6,21 +6,20 @@ $blue: #6a8daa;
 $orange: #ffb350;
 $brown: #8E6A49;
 
-$light-gray: #d2d3db;
+$light: #d2d3db;
 $mid-gray: #9a9bad;
 $dark-gray: #65667c;
-$darkest-gray: #373844;
+$dark: #373844;
 
 $primary: $green;
-$secondary: $darkest-gray;
+$secondary: $dark;
 $tertiary: $orange;
 $info: $blue;
 
-$light: $light-gray;
 $light-primary: #a7d3bC;
 $light-tertiary: lighten($tertiary, 10%);
 
-$font-size-base: 1 rem;
+$font-size-base: 1rem;
 
 // Fonts
 @font-face {
@@ -72,7 +71,7 @@ $font-family-heading: Mont, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 // Mixins
 
 @mixin text-with-2px-dark-shadow {
-  text-shadow: 0 0 2px $darkest-gray;
+  text-shadow: 0 0 2px $dark;
 }
 
 @mixin background-gradient-primary {
