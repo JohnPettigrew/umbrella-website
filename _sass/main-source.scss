@@ -95,6 +95,35 @@ nav.navbar {
   width: 100vw;
   height: 80px;
   background-color: $dark;
+  @include transition-general;
+
+  &.scrolled {
+    background-color: $white;
+    box-shadow: 0 -25px 30px 20px $dark;
+
+    .navbar-brand {
+      background-image: url($image-path + 'umbrella-logo-dark.svg');
+    }
+
+    ul.navbar-nav {
+      color: $dark;
+
+      li {
+        a {
+          color: $dark;
+          border-bottom: 3px solid $white;;
+        }
+
+        ul.dropdown-menu {
+          li {
+            a.dropdown-item {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
 
   .navbar-brand {
     margin: 10px 0;
@@ -107,6 +136,7 @@ nav.navbar {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top left;
+    @include transition-general;
   }
 
   ul.navbar-nav {
@@ -125,6 +155,7 @@ nav.navbar {
         text-decoration: none;
         padding-bottom: 3px;
         border-bottom: 3px solid $dark;;
+        @include transition-general;
 
         &:hover {
           border-color: $primary;
@@ -137,7 +168,6 @@ nav.navbar {
         li {
           width: 100%;
           padding: 0;
-
 
           a.dropdown-item {
             color: $dark;
@@ -188,6 +218,8 @@ nav.navbar {
           text-align: right;
 
           a {
+            border-bottom: none;
+
             &:hover {
               background-color: inherit;
               text-decoration: underline;
