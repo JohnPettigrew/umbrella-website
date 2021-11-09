@@ -40,7 +40,7 @@ body {
     font-weight: bold;
     color: $dark;
     border: none;
-    padding: 8px 30px 0 30px;
+    padding: 8px 30px 0;
     border-radius: $dropdown-border-radius;
     @include transition-general;
 
@@ -144,7 +144,7 @@ body {
     &.logo-lines {
       border: 5px solid $dark;
       border-bottom: 0;
-      margin: 5px 0 0 0;
+      margin: 5px 0 0;
       opacity: 1;
 
       &.border-first {
@@ -194,7 +194,7 @@ nav.navbar {
       li {
         a {
           color: $dark;
-          border-bottom: 3px solid $white;;
+          border-bottom: 3px solid $white;
         }
       }
     }
@@ -240,7 +240,7 @@ nav.navbar {
         color: $white;
         text-decoration: none;
         padding-bottom: 3px;
-        border-bottom: 3px solid $dark;;
+        border-bottom: 3px solid $dark;
         @include transition-general;
 
         &:hover {
@@ -268,7 +268,6 @@ nav.navbar {
       }
     }
   }
-
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
     .offcanvas-collapse {
       position: fixed;
@@ -325,13 +324,11 @@ nav.navbar {
               width: 100%;
               padding: 0;
 
-
               a.dropdown-item {
                 color: $dark;
                 width: 100%;
 
-                &:hover {
-                }
+                &:hover {}
               }
             }
           }
@@ -350,7 +347,8 @@ nav.navbar {
     flex-direction: column;
     justify-content: space-between;
 
-    div#hero-image, div#hero-text  {
+    div#hero-image,
+    div#hero-text {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -363,7 +361,6 @@ nav.navbar {
       &.loaded {
         opacity: 1;
       }
-
     }
 
     div#hero-text {
@@ -380,7 +377,6 @@ nav.navbar {
         font-size: 2.5rem;
         font-weight: normal;
       }
-
       @media (max-width: map-get($grid-breakpoints, 'lg')) {
         min-height: 50vh;
       }
@@ -398,7 +394,6 @@ nav.navbar {
 
   &.loaded {
     top: -150px;
-
     @media (max-width: map-get($grid-breakpoints, 'md')) {
       & {
         top: -75px;
@@ -433,7 +428,6 @@ nav.navbar {
       border-top-right-radius: $dropdown-border-radius;
       border-bottom-right-radius: $dropdown-border-radius;
     }
-
     @media (max-width: map-get($grid-breakpoints, 'lg')) {
       & {
         min-height: 150px;
@@ -457,7 +451,7 @@ nav.navbar {
     max-height: 72px;
     @include transition-general;
 
-      & > i {
+    & > i {
       display: inline-block;
       top: 0;
       position: relative;
@@ -473,7 +467,7 @@ nav.navbar {
 
   &:hover {
     & > div {
-        &> i {
+      & > i {
         top: -0.3rem;
         font-size: 3.6rem;
       }
@@ -502,7 +496,7 @@ nav.navbar {
   text-align: left;
 
   .container {
-    padding: 30px 0 0 0;
+    padding: 30px 0 0;
 
     .row {
       padding: 30px 0;
@@ -546,7 +540,6 @@ nav.navbar {
       }
     }
   }
-
   @media (max-width: map-get($grid-breakpoints, 'md')) {
     text-align: center;
   }
@@ -576,7 +569,7 @@ nav.navbar {
 
   h2 {
     text-align: center;
-    padding: 60px 0 30px 0;
+    padding: 60px 0 30px;
   }
 
   h3 {
@@ -659,6 +652,37 @@ nav.navbar {
 
     button {
       padding-top: 3px;
+    }
+  }
+}
+
+footer {
+  background-color: $dark;
+
+  .container {
+    padding: 90px 0;
+
+    ul.links li a {
+      position: relative;
+      color: $white;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    ul.links li a::before {
+      color: $secondary;
+      margin-right: 5px;
+      content: "\f0da";
+      vertical-align: baseline;
+    }
+
+    ul.links li a:hover::before {
+      padding-right: 5px;
+    }
+
+    ul.links li a:focus,
+    ul.links li a:hover {
+      color: $secondary;
     }
   }
 }
