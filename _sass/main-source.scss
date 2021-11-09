@@ -561,3 +561,72 @@ nav.navbar {
     margin-bottom: 30px;
   }
 }
+
+#testimonials {
+  background-color: $dark;
+  color: $white;
+
+  .container {
+    padding-bottom: 60px;
+  }
+
+  img {
+    width: auto; // Reset the global 100% from body, which fills the parent element (not what we want here)
+  }
+
+  h2 {
+    text-align: center;
+    padding: 60px 0 30px 0;
+  }
+
+  h3 {
+    font-weight: normal;
+  }
+
+  #testimonial-company-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    .wrapper {
+      min-height: 120px;
+    }
+  }
+
+  #testimonial-carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    h3 {
+      padding-bottom: 30px;
+      text-align: center;
+    }
+
+    #testimonialCarousel {
+      max-width: 646px;
+      width: 646px;
+      min-width: 646px;
+
+      .carousel-indicators {
+        top: 180px;
+      }
+
+      .carousel-item {
+        padding: 0 90px;
+
+        .row {
+          align-items: center;
+        }
+
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
