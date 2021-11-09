@@ -20,6 +20,16 @@
     }
   }
 
+  function backToTopVisible() {
+    let amountScrolled = 700;
+    let backBtn = document.querySelector("a.back-top");
+    if (window.pageYOffset > amountScrolled) {
+      backBtn.classList.add("back-top-visible");
+    } else {
+      backBtn.classList.remove("back-top-visible");
+    }
+  }
+
   window.addEventListener('load', function() {
     changeNavbarStyleOnScroll();
     animateElementsOnPageLoad();
@@ -36,16 +46,6 @@
     document.querySelector('.offcanvas-collapse').classList.toggle('open');
     document.querySelector('.navbar-toggler-icon i').classList.toggle('bi-list');
     document.querySelector('.navbar-toggler-icon i').classList.toggle('bi-x');
-  }
-
-  function backToTopVisible() {
-    let amountScrolled = 700;
-    let backBtn = document.querySelector("a.back-top");
-    if (window.pageYOffset > amountScrolled) {
-      backBtn.classList.add("back-top-visible");
-    } else {
-      backBtn.classList.remove("back-top-visible");
-    }
   }
 
   function scrollBackToTop() {

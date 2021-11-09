@@ -196,14 +196,6 @@ nav.navbar {
           color: $dark;
           border-bottom: 3px solid $white;;
         }
-
-        ul.dropdown-menu {
-          li {
-            a.dropdown-item {
-              color: $white;
-            }
-          }
-        }
       }
     }
   }
@@ -335,7 +327,7 @@ nav.navbar {
 
 
               a.dropdown-item {
-                color: $white;
+                color: $dark;
                 width: 100%;
 
                 &:hover {
