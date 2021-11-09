@@ -8,8 +8,15 @@
     }
   }
 
+  function animateKeyMessagesBoxes() {
+    if (!!document.querySelector('#key-message-boxes')) {
+      document.querySelector('#key-message-boxes').classList.add('loaded');
+    }
+  }
+
   window.addEventListener('load', function() {
     checkScroll();
+    animateKeyMessagesBoxes();
   }, false);
   window.addEventListener('scroll', function() {
     checkScroll();

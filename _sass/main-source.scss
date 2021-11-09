@@ -74,7 +74,7 @@ body {
     &.logo-lines {
       border: 5px solid $dark;
       border-bottom: 0;
-      margin: 5px 0;
+      margin: 5px 0 0 0;
       opacity: 1;
 
       &.border-first {
@@ -289,7 +289,7 @@ nav.navbar {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - #{$navbar-height} - #{$logolines-height});
+      min-height: calc(100vh - #{$navbar-height + $logolines-height});
       padding: 0;
     }
 
@@ -308,6 +308,95 @@ nav.navbar {
 
       @media (max-width: map-get($grid-breakpoints, 'lg')) {
         min-height: 50vh;
+      }
+    }
+  }
+}
+
+#key-message-boxes {
+  position: relative;
+  top: 60px;
+  @include transition-general;
+  display: flex;
+  justify-content: center;
+
+  &.loaded {
+    top: -150px;
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      & {
+        top: -75px;
+      }
+    }
+  }
+
+  & > .row {
+    max-width: 80%;
+    align-items: center;
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      & {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      & {
+        max-width: 80%;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      & {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .key-message-box {
+    background-color: $brown;
+    min-height: 250px;
+    max-height: 250px;
+    color: $white;
+    text-align: center;
+    padding: 30px;
+
+    &:nth-of-type(2) {
+      background-color: $primary;
+      min-height: 300px;
+      padding-top: 52px;
+    }
+
+    & > div {
+      max-height: 72px;
+      @include transition-general;
+
+        & > i {
+        display: inline-block;
+        top: 0;
+        position: relative;
+        font-size: 3rem;
+        @include transition-general;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      & > div {
+          &> i {
+          top: -0.3rem;
+          font-size: 3.6rem;
+        }
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      & {
+        min-height: 150px;
       }
     }
   }
