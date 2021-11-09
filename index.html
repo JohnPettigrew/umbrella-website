@@ -22,17 +22,17 @@ title: Welcome
 
 <section id="key-message-boxes" class="container">
   <div class="row">
-    <div class="key-message-box col-12 col-lg-4">
+    <div class="item-box col-12 col-lg-4">
       <div aria-hidden="true"><i class="bi-activity"></i></div>
       <h3>Impact</h3>
       <p>Turn your data into actionable insights for improving inclusion and equity</p>
     </div>
-    <div class="key-message-box col-12 col-lg-4">
+    <div class="item-box col-12 col-lg-4">
       <div aria-hidden="true"><i class="bi-send"></i></div>
       <h3>Communicate</h3>
       <p>Ensure you write for all your people, for recruitment, retention and training</p>
     </div>
-    <div class="key-message-box col-12 col-lg-4">
+    <div class="item-box col-12 col-lg-4">
       <div aria-hidden="true"><i class="bi-file-earmark-richtext"></i></div>
       <h3>Monitor</h3>
       <p>Create and export clear reports for senior management or government compliance</p>
@@ -45,7 +45,7 @@ title: Welcome
     <div class="col-12 col-md-6 col-lg-8">
       <h2>A better workplace <br class="d-none d-md-inline"> for <span class="text-primary">your team</span></h2>
       <p class="mb-2">Our unique software platform was built with inclusion in mind from the start. It makes your people data transparent, improves staff recruitment and retention, and automates management and government reports. You upload a range of data your organisation  already has - pay, location, gender, job listings etc. - and our app immediately fills your dashboards with information tailored to your business. Focus on the key inclusion metrics you need to track and get clear recommendations for action based on evidence of what employees want. Share your reports and insights with the Board, your management team or the whole staff. You now have the power to track progress and easily share information from the C-Suite to the cubicles!</p>
-      <p><a href="{{ site.url }}/contact.html" class="btn btn-secondary">Find out more</a></p>
+      <p><a href="{{ site.url }}/contact.html" class="btn btn-secondary">Tell us what you need</a></p>
     </div>
     <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
       <div class="image"><img alt="Drawing of a woman creating and inspecting charts and graphs" src="{{ site.url }}/images/backgrounds/better-workplace.svg" height="400" width="307"></div>
@@ -53,74 +53,48 @@ title: Welcome
   </div>
 </section>
 
-<section id="features" class="bg-secondary text-white">
+<section id="features">
   {% include _logo_lines.html %}
-  <div class="container mt-5 mb-5">
+  <div class="container">
     <div class="row">
       <div class="col-lg-5 col-md-6 col-12">
-        <div class="heading-title mb-4 wow fadeInLeft" data-wow-delay="200ms">
-          <span class="text-center text-md-left text-primary">Modern cloud-based platform</span>
-          <h2 class="mb-4 font-weight-normal text-center text-md-left">Umbrella makes it <span class="text-primary">easy<span></h2>
-        </div>
+        <div id="feature-tagline">Modern cloud-based platform</div>
+        <h2 id="feature-headline">Umbrella makes it <span class="text-primary">easy<span></h2>
       </div>
-      <div class="col-lg-5 offset-lg-1 col-md-6 col-12 wow fadeInRight" data-wow-delay="200ms">
-        <p class="mt-n3 mt-sm-0 text-center text-md-left">We help you use your data to build a more welcoming, diverse and representative workplace, so that everyone has the chance to succeed and your business can find and retain the best people. Our unique software platform gives employers and employees the support they need to understand their culture, plan for a better future and ensure their place in a fairer world.</p>
+      <div class="col-lg-5 offset-lg-1 col-md-6 col-12">
+        <p>We help you use your data to build a more welcoming, diverse and representative workplace, so that everyone has the chance to succeed and your business can find and retain the best people. Our unique software platform gives employers and employees the support they need to understand their culture, plan for a better future and ensure their place in a fairer world.</p>
       </div>
     </div>
-    <div class="row d-flex align-items-center mt-4" id="app-feature">
+    <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-12">
-        <div class="text-center text-md-left">
-          <div class="feature-item mt-1 wow fadeInLeft" data-wow-delay="200ms">
-            <div class="icon"><i class="fas fa-grin"></i></div>
-            <div class="text">
-              <h4 class="mb-3">
-                <span class="d-inline-block">Build on what you know</span>
-              </h4>
-              <p>Our unique platform absorbs and transforms your data, enriches it, and then extracts and makes visible the insights hiding within.</p>
-            </div>
-          </div>
-          <div class="feature-item mt-5 wow fadeInLeft" data-wow-delay="250ms">
-            <div class="icon"><i class="fas fa-edit"></i></div>
-            <div class="text">
-              <h4 class="mb-3">
-                <span class="d-inline-block">Manage your own data</span>
-              </h4>
-              <p>Clear dashboards, charts and score cards show you who your team really are, and compare you with your past, your future and your competitors.</p>
-            </div>
-          </div>
+        <div class="item-box">
+          <div aria-hidden="true"><i class="bi-emoji-sunglasses"></i></div>
+          <h3>Build on what you know</h3>
+          <p>Our unique platform absorbs and transforms your data, enriches it, and then extracts and makes visible the insights hiding within.</p>
+        </div>
+        <div class="item-box">
+          <div aria-hidden="true"><i class="bi-pencil-square"></i></div>
+          <h3>Manage your own data</h3>
+          <p>Clear dashboards, charts and score cards show you who your team really are, and compare you with your past, your future and your competitors.</p>
         </div>
       </div>
-      <div class="col-lg-6 col-md-4 col-sm-12 p-5 text-center">
-        <div class="feature-box bg-primary wow fadeIn mx-5" data-wow-delay="400ms">
-          <div class="image p-4">
-            <img alt="" src="{{ site.url }}/images/laptop-for-video.png">
-            <div class="overlay center-block">
-              <a class="play-button" href="#" title="Play video"><i class="fa fa-play"></i></a>
-            </div>
-          </div>
+      <div class="col-lg-6 col-md-4 col-sm-12">
+        <div id="feature-box">
+          <img alt="" src="{{ site.url }}/images/laptop-for-video.png">
+          <a class="play-button" href="#" title="Play video"><i class="bi-play-btn-fill"></i></a>
         </div>
-        <div class="padding_top"><a href="{{ site.url }}/how-it-works.html" class="button gradient-btn btn-primary mt-4 mb-sm-0 mb-4">Learn more</a></div>
+        <div class="text-center"><a href="{{ site.url }}/how-it-works.html" class="btn btn-primary">Learn more</a></div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-12">
-        <div class="text-center text-md-right">
-          <div class="feature-item mt-1 wow fadeInRight" data-wow-delay="200ms">
-            <div class="icon"><i class="fas fa-comments"></i></div>
-            <div class="text">
-              <h4 class="mb-3">
-                <span class="d-inline-block">Clear communication</span>
-              </h4>
-              <p>Ensure you're saying what you want, to the people you want. Get word-by-word feedback, score cards and track performance over time.</p>
-            </div>
-          </div>
-          <div class="feature-item mt-5 wow fadeInRight" data-wow-delay="250ms">
-            <div class="icon"><i class="fas fa-network-wired"></i></div>
-            <div class="text">
-              <h4 class="mb-3">
-                <span class="d-inline-block">Control and manage</span>
-              </h4>
-              <p>Secure by design, with role-based access control and tag-based sharing. Share the content you want, with the people you want.</p>
-            </div>
-          </div>
+        <div class="item-box">
+          <div aria-hidden="true"><i class="bi-chat-dots"></i></div>
+          <h3>Clear communication</h3>
+          <p>Ensure you're saying what you want, to the people you want. Get word-by-word feedback, score cards and track performance over time.</p>
+        </div>
+        <div class="item-box">
+          <div aria-hidden="true"><i class="bi-shield-exclamation"></i></div>
+          <h3>Control and manage</h3>
+          <p>Secure by design, with role-based access control and tag-based sharing. Share the content you want, with the people you want.</p>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ body {
   direction: ltr;
   line-height: 1.5;
   letter-spacing: 0;
-  padding-top: 80px;
+  padding-top: $navbar-height;
 
   ::selection {
     background: $primary !important;
@@ -38,10 +38,10 @@ body {
     font-family: $font-family-heading;
     font-size: 1.3rem;
     font-weight: bold;
-    color: $white;
+    color: $dark;
     border: none;
     padding: 8px 30px 0 30px;
-    border-radius: 22.5px;
+    border-radius: $dropdown-border-radius;
     @include transition-general;
 
     &.btn-primary {
@@ -54,7 +54,7 @@ body {
 
     &:hover {
       background-position: right center;
-      color: $white;
+      color: $dark-gray;
     }
   }
 
@@ -297,7 +297,7 @@ nav.navbar {
         align-items: flex-end;
         font-size: 1.8rem;
         line-height: 2.1rem;
-        padding: 80px 0;
+        padding: $navbar-height 0;
 
         li {
           padding: 0 30px;
@@ -412,45 +412,26 @@ nav.navbar {
     align-items: center;
   }
 
-  .key-message-box {
+  .item-box {
     background-color: $brown;
-    min-height: 250px;
-    max-height: 250px;
     color: $white;
-    text-align: center;
     padding: 30px;
+
+    &:first-of-type {
+      border-top-left-radius: $dropdown-border-radius;
+      border-bottom-left-radius: $dropdown-border-radius;
+    }
 
     &:nth-of-type(2) {
       background-color: $primary;
       min-height: 300px;
       padding-top: 52px;
+      border-radius: $dropdown-border-radius;
     }
 
-    & > div {
-      max-height: 72px;
-      @include transition-general;
-
-        & > i {
-        display: inline-block;
-        top: 0;
-        position: relative;
-        font-size: 3rem;
-        @include transition-general;
-      }
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    &:hover {
-      & > div {
-          &> i {
-          top: -0.3rem;
-          font-size: 3.6rem;
-        }
-      }
+    &:last-of-type {
+      border-top-right-radius: $dropdown-border-radius;
+      border-bottom-right-radius: $dropdown-border-radius;
     }
 
     @media (max-width: map-get($grid-breakpoints, 'lg')) {
@@ -462,6 +443,39 @@ nav.navbar {
           min-height: 150px;
           padding-top: 30px;
         }
+      }
+    }
+  }
+}
+
+.item-box {
+  min-height: 250px;
+  max-height: 250px;
+  text-align: center;
+
+  & > div {
+    max-height: 72px;
+    @include transition-general;
+
+      & > i {
+      display: inline-block;
+      top: 0;
+      position: relative;
+      font-size: 3rem;
+      @include transition-general;
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    & > div {
+        &> i {
+        top: -0.3rem;
+        font-size: 3.6rem;
       }
     }
   }
@@ -479,5 +493,61 @@ nav.navbar {
 
   .btn {
     margin: 30px 0;
+  }
+}
+
+#features {
+  background-color: $dark;
+  color: $white;
+  text-align: left;
+
+  .container {
+    padding: 30px 0 0 0;
+
+    .row {
+      padding: 30px 0;
+
+      #feature-tagline {
+        font-size: 1.2rem;
+        color: $primary;
+        padding-bottom: 10px;
+      }
+
+      #feature-headline {
+        font-size: 3rem;
+        font-weight: normal;
+      }
+
+      #feature-box {
+        margin: 90px;
+        max-height: 170px;
+
+        img {
+          background-color: $primary;
+          border-radius: $dropdown-border-radius;
+        }
+
+        a.play-button {
+          display: block;
+          position: relative;
+          top: -130px;
+          text-align: center;
+          font-size: 4rem;
+          color: $dark;
+          transform-origin: center center;
+          @include transition-general;
+        }
+
+        &:hover {
+          a.play-button {
+            transform: scale(150%);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    text-align: center;
   }
 }
