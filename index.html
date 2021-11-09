@@ -3,22 +3,20 @@ layout: index
 title: Welcome
 ---
 
-<section id="main-banner-area" class="container-fluid bg-dark">
+<section id="main-banner-area" class="container-fluid">
   <div class="outer-banner">
     <div class="row">
-      <div id="hero-image" class="col-5">
-        <img src="{{ site.url }}/images/backgrounds/hero-image-1.svg" alt="Drawing of a woman seated cross-legged with her eyes closed, surrounded by thoughts of data and charts." width="500">
+      <div id="hero-image" class="d-none d-lg-flex col-lg-5">
+        <img src="{{ site.url }}/images/backgrounds/hero-image-1.svg" alt="Drawing of a woman seated cross-legged with her eyes closed, surrounded by thoughts of data and charts.">
       </div>
-      <div id="hero-text" class="col-7">
+      <div id="hero-text" class="col-12 col-lg-7">
         <div>
-          <h2 class="text-white text-center font-weight-bold">Thoughtful data for real impact</h2>
-          <h2 class="text-white text-center font-weight-normal heading-title-small">Easily measure & improve equity in your workplace</h2>
+          <h1>Thoughtful data for real impact</h1>
+          <h2>Easily measure & improve equity in your workplace</h2>
         </div>
       </div>
     </div>
-    <div id="logo-lines-hero">
-      {% include _logo_lines.html %}
-    </div>
+    <div id="logo-lines-hero">{% include _logo_lines.html %}</div>
   </div>
 </section>
 

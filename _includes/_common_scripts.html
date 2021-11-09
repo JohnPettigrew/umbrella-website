@@ -17,4 +17,10 @@
   window.addEventListener('resize', function() {
     checkScroll();
   }, false);
+
+  function navbarToggle() {
+    document.querySelector('.offcanvas-collapse').classList.toggle('open');
+    document.querySelector('.navbar-toggler-icon i').classList.toggle('bi-list');
+    document.querySelector('.navbar-toggler-icon i').classList.toggle('bi-x');
+  }
 </script>

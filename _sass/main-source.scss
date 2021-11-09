@@ -51,7 +51,7 @@ body {
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   h3 {
@@ -72,9 +72,10 @@ body {
 
   hr {
     &.logo-lines {
-      border-width: 5px;
-      border-bottom: 0 !important;
+      border: 5px solid $dark;
+      border-bottom: 0;
       margin: 5px 0;
+      opacity: 1;
 
       &.border-first {
         border-color: $red;
@@ -89,11 +90,15 @@ body {
       }
     }
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 nav.navbar {
   width: 100vw;
-  height: 80px;
+  height: $navbar-height;
   background-color: $dark;
   @include transition-general;
 
@@ -103,6 +108,10 @@ nav.navbar {
 
     .navbar-brand {
       background-image: url($image-path + 'umbrella-logo-dark.svg');
+    }
+
+    .navbar-toggler {
+      color: $dark;
     }
 
     ul.navbar-nav {
@@ -137,6 +146,17 @@ nav.navbar {
     background-repeat: no-repeat;
     background-position: top left;
     @include transition-general;
+  }
+
+  .navbar-toggler {
+    color: $white;
+    padding: 0;
+    border: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
   }
 
   ul.navbar-nav {
@@ -183,10 +203,10 @@ nav.navbar {
     }
   }
 
-  @media (max-width: 991.98px) {
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
     .offcanvas-collapse {
       position: fixed;
-      top: 80px; /* Height of navbar */
+      top: $navbar-height;
       bottom: 0;
       left: 100%;
       width: 100%;
@@ -195,7 +215,7 @@ nav.navbar {
       overflow-y: auto;
       visibility: hidden;
       background-color: $secondary;
-      transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+      @include transition-general;
 
       &.open {
         visibility: visible;
@@ -250,6 +270,44 @@ nav.navbar {
             }
           }
         }
+      }
+    }
+  }
+}
+
+#main-banner-area {
+  background-color: $dark;
+  padding: 0;
+
+  .outer-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div#hero-image, div#hero-text  {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - #{$navbar-height} - #{$logolines-height});
+      padding: 0;
+    }
+
+    div#hero-text {
+      h1 {
+        color: $white;
+        text-align: center;
+      }
+
+      h2 {
+        color: $white;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: normal;
+      }
+
+      @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        min-height: 50vh;
       }
     }
   }
