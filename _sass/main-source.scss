@@ -591,7 +591,10 @@ nav.navbar {
     margin-bottom: 60px;
 
     .wrapper {
-      min-height: 120px;
+      min-height: 100px;
+      padding: 10px;
+      background-color: $light;
+      border-radius: $dropdown-border-radius;
     }
   }
 
