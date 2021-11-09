@@ -346,21 +346,15 @@ nav.navbar {
     align-items: center;
 
     @media (max-width: map-get($grid-breakpoints, 'xl')) {
-      & {
-        max-width: 100%;
-      }
+      max-width: 100%;
     }
 
     @media (max-width: map-get($grid-breakpoints, 'lg')) {
-      & {
-        max-width: 80%;
-      }
+      max-width: 80%;
     }
 
     @media (max-width: map-get($grid-breakpoints, 'md')) {
-      & {
-        max-width: 100%;
-      }
+      max-width: 100%;
     }
   }
 
@@ -405,9 +399,15 @@ nav.navbar {
       }
     }
 
-    @media (max-width: map-get($grid-breakpoints, 'md')) {
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
       & {
         min-height: 150px;
+        padding: 10px 30px;
+
+        &:nth-of-type(2) {
+          min-height: 150px;
+          padding-top: 30px;
+        }
       }
     }
   }
