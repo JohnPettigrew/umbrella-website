@@ -31,6 +31,33 @@ body {
     box-shadow: none;
   }
 
+  .btn {
+    min-height: 45px;
+    max-height: 45px;
+    min-width: 180px;
+    font-family: $font-family-heading;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $white;
+    border: none;
+    padding-top: 8px;
+    border-radius: 22.5px;
+    @include transition-general;
+
+    &.btn-primary {
+      @include background-gradient-primary;
+    }
+
+    &.btn-secondary {
+      @include background-gradient-secondary;
+    }
+
+    &:hover {
+      background-position: right center;
+      color: $white;
+    }
+  }
+
   small {
     font-size: 60%;
   }
@@ -93,6 +120,10 @@ body {
 
   img {
     width: 100%;
+  }
+
+  .container {
+    max-width: 1140px;
   }
 }
 
@@ -342,20 +373,8 @@ nav.navbar {
   }
 
   & > .row {
-    max-width: 80%;
+    max-width: 100%;
     align-items: center;
-
-    @media (max-width: map-get($grid-breakpoints, 'xl')) {
-      max-width: 100%;
-    }
-
-    @media (max-width: map-get($grid-breakpoints, 'lg')) {
-      max-width: 80%;
-    }
-
-    @media (max-width: map-get($grid-breakpoints, 'md')) {
-      max-width: 100%;
-    }
   }
 
   .key-message-box {
@@ -410,5 +429,20 @@ nav.navbar {
         }
       }
     }
+  }
+}
+
+#main-message {
+  margin-top: 90px;
+  text-align: left;
+
+  h2 {
+    font-weight: normal;
+    font-size: 3rem;
+    padding-bottom: 30px;
+  }
+
+  .btn {
+    margin: 30px 0;
   }
 }
