@@ -1,5 +1,5 @@
 <script>
-  function checkScroll() {
+  function changeNavbarStyleOnScroll() {
     var startY = document.querySelector('#navbar').clientHeight; //The point where the navbar changes in px
     if (window.pageYOffset > startY) {
       document.querySelector('.navbar').classList.add("scrolled");
@@ -21,19 +21,35 @@
   }
 
   window.addEventListener('load', function() {
-    checkScroll();
+    changeNavbarStyleOnScroll();
     animateElementsOnPageLoad();
   }, false);
   window.addEventListener('scroll', function() {
-    checkScroll();
+    changeNavbarStyleOnScroll();
+    backToTopVisible();
   }, false);
   window.addEventListener('resize', function() {
-    checkScroll();
+    changeNavbarStyleOnScroll();
   }, false);
 
   function navbarToggle() {
     document.querySelector('.offcanvas-collapse').classList.toggle('open');
     document.querySelector('.navbar-toggler-icon i').classList.toggle('bi-list');
     document.querySelector('.navbar-toggler-icon i').classList.toggle('bi-x');
+  }
+
+  function backToTopVisible() {
+    let amountScrolled = 700;
+    let backBtn = document.querySelector("a.back-top");
+    if (window.pageYOffset > amountScrolled) {
+      backBtn.classList.add("back-top-visible");
+    } else {
+      backBtn.classList.remove("back-top-visible");
+    }
+  }
+
+  function scrollBackToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 </script>

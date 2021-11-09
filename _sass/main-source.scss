@@ -58,6 +58,49 @@ body {
     }
   }
 
+  .back-top {
+    right: 20px;
+    font-size: 26px;
+    position: fixed;
+    z-index: 1600;
+    opacity: 0;
+    color: $white;
+    visibility: hidden;
+    bottom: 20px;
+    -webkit-background-size: 200% auto;
+    background-size: 200% auto;
+    @include background-gradient-secondary;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    @include transition-general;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    &:hover {
+      color: $white;
+      background-position: right center;
+    }
+
+    &:focus {
+      color: $white;
+    }
+
+    &.back-top-visible {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
   small {
     font-size: 60%;
   }
