@@ -793,9 +793,9 @@ footer {
 }
 
 #single-column-page {
-  #about-us {
-    padding: 90px 0;
+  padding-top: 90px;
 
+  #error404 {
     .row {
       div:nth-of-type(2) {
         display: flex;
@@ -803,6 +803,10 @@ footer {
         justify-content: center;
       }
     }
+  }
+
+  #about-us {
+    padding: 90px 0;
   }
 
   #our-process {
