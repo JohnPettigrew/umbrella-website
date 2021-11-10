@@ -972,6 +972,17 @@ footer {
           justify-content: flex-start;
           background-color: $primary;
           color: $white;
+
+          h3 {
+            a {
+              color: $white;
+
+              &:hover {
+                color: $white;
+                text-decoration: none;
+              }
+            }
+          }
         }
 
         .card-body {
