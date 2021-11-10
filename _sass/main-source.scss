@@ -784,6 +784,8 @@ footer {
         }
 
         &:hover {
+          text-decoration: none;
+
           &::before {
             padding-right: 5px;
           }
