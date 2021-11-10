@@ -662,27 +662,46 @@ footer {
   .container {
     padding: 90px 0;
 
-    ul.links li a {
-      position: relative;
-      color: $white;
-      margin-bottom: 10px;
-      font-size: 14px;
+    .row {
+      align-items: center;
     }
 
-    ul.links li a::before {
-      color: $secondary;
-      margin-right: 5px;
-      content: "\f0da";
-      vertical-align: baseline;
+    .footer-panel {
+      text-align: left;
+      margin: 30px;
+
+      @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        text-align: right;
+        margin: 0;
+      }
     }
 
-    ul.links li a:hover::before {
-      padding-right: 5px;
-    }
+    ul.links {
+      margin: auto 0;
 
-    ul.links li a:focus,
-    ul.links li a:hover {
-      color: $secondary;
+      li a {
+        position: relative;
+        color: $white;
+        margin-bottom: 10px;
+        font-size: 14px;
+
+        &::before {
+          color: $secondary;
+          margin-right: 5px;
+          content: "🞂";
+          vertical-align: baseline;
+        }
+
+        &:hover {
+          &::before {
+            padding-right: 5px;
+          }
+        }
+
+        &:focus, &:hover {
+          color: $secondary;
+        }
+      }
     }
   }
 }
