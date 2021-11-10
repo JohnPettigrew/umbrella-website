@@ -5,7 +5,7 @@
   <body>
     {% include _navbar.html %}
 
-    <section id="main-banner-page">
+    <section id="main-page">
       <div class="container">
         <div class="row">
           <div class="d-none d-lg-block col-lg-3">
@@ -16,13 +16,10 @@
             <h2>{{ page.subtitle }}</h2>
           </div>
         </div>
-        <div class="breadcrumb">
-          <h3>{{ page.title }}</h3>
-          <ul>
-            <li><strong><a href="{{ site.url }}">Home</a></strong></li>
-            <li>{{ page.title }}</li>
-          </ul>
-        </div>
+        <ul class="breadcrumb">
+          <li><strong><a href="{{ site.url }}">Home</a></strong></li>
+          <li>{{ page.title }}</li>
+        </ul>
       </div>
     </section>
 

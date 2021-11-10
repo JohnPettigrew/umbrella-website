@@ -5,31 +5,28 @@
   <body>
     {% include _navbar.html %}
 
-    <section id="main-banner-page" class="page-header blog-header section-nav-smooth">
+    <section id="main-page">
       <div class="container">
-        <div class="page-titles row">
-          <div class="col-lg-6 offset-lg-3">
-            <div class="text-white text-center padding_top">
-              <h1 class="py-2">{{ page.title }}</h1>
-              <h2 class="font-weight-light pb-4 pt-1">A blog post from Umbrella</h2>
-            </div>
+        <div class="row">
+          <div class="d-none d-lg-block col-lg-3">
+            <img src="{{ site.url }}/images/backgrounds/blog.svg" alt="Drawing of a man with pages flying away from him. (By Pixeltrue from Ouch!)" class="w-100">
+          </div>
+          <div class="col-9">
+            <h1>{{ page.title }}</h1>
+            <h2>{{ page.subtitle }}</h2>
           </div>
         </div>
-        <div class="title-wrap row gradient-bg mt-n5">
-          <div class="col-lg-12 col-md-12">
-            <h3 class="float-left">{{ page.title }}</h3>
-            <ul class="breadcrumb float-right">
-              <li class="breadcrumb-item hover-light"><a href="{{ site.url }}">Home</a></li>
-              <li class="breadcrumb-item">{{ page.title }}</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="breadcrumb">
+          <li><strong><a href="{{ site.url }}">Home</a></strong></li>
+          <li><strong><a href="{{ site.url }}/blog.html">Blog</a></strong></li>
+          <li>{{ page.title }}</li>
+        </ul>
       </div>
     </section>
 
     <section id="single-column-page">
-      <div class="container blog-post-container">
-        <p><em>{{ page.date | date: '%-d %B %Y' }}</em></p>
+      <div class="container" id="blog-post">
+        <p><em>Blog post dated {{ page.date | date: '%-d %B %Y' }}</em></p>
 
         {{ content }}
       </div>
