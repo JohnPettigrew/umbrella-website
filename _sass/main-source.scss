@@ -8,6 +8,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0;
   padding-top: $navbar-height;
+  counter-reset: h3;
 
   ::selection {
     background: $primary !important;
@@ -1005,10 +1006,6 @@ footer {
     }
   }
 
-  #blog-post {
-    padding: 0 90px 90px 90px;
-  }
-
   #contact-form {
     padding: 30px;
     margin-bottom: 90px;
@@ -1065,5 +1062,25 @@ footer {
         justify-content: center;
       }
     }
+  }
+
+  .legal {
+
+    h3.numbered-list::before {
+      counter-increment: h3;
+      content: counter(h3) ". ";
+    }
+
+    ol {
+      list-style: decimal;
+
+      ol {
+        list-style: lower-roman;
+      }
+    }
+  }
+
+  #narrow-column {
+    padding: 0 90px 90px 90px;
   }
 }
