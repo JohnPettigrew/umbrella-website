@@ -2,42 +2,37 @@
 layout: default
 title: How much does it cost?
 subtitle: Simple pricing that scales with you
-banner-type: pricing
+banner: money
+banner-alt-text: Drawing of a woman carrying a piggy bank. (By Pixeltrue from Ouch!)
 ---
 
 <section id="single-column-area">
-  <div class="container pb-5">
-    <div class="text-center heading-title">
-      <h2>Get started for free</h2>
-      <p><strong>Free</strong> to use to generate UK statutory gender pay reports, to try out one job advert, and to access our sample data visualisations.</p>
-      <h3>Bundle and save</h3>
-      <p>Subscribe to both the Visualise and Analyse strands, and get <strong>10%</strong> off your total bill.</strong>!</p>
-    </div>
+  <div class="container text-center mb-5">
+    <h2>Get started for free</h2>
+    <p><strong>Free</strong> to use to generate UK statutory gender pay reports, to try out one job advert, and to access our sample data visualisations.</p>
+    <h3 class="mt-4">Bundle and save</h3>
+    <p>Subscribe to both the Visualise and Analyse strands, and get <strong>10%</strong> off your total bill.</strong>!</p>
   </div>
 
   {% include _logo_lines.html %}
 
-  <div class="container pb-5">
-    <div class="text-center mb-4 mt-5">
-      <h3 class="mt-5 text-primary">Your subscription details</h3>
-      <p>Use the price calculator to see how little Umbrella Analytics would cost you based on your business size and the product strands you're interested in. These plans should suit companies from 10 to 10,000 employees. Contact us if you are bigger than that, or need Umbrella to integrate with your other systems.</p>
-      <div class="price-toggle-wrapper bg-light mt-5">
-        <span id="monthly" class="pricing-toggle-button month">Pay monthly</span>
-        <span id="annually" class="pricing-toggle-button year active">Pay annually</span>
-      </div>
-      <div class="mt-5 price-volume-card">
-        <p>How many employees does your business have?</p>
-        <div class="price-volume-wrapper">
-          <form class="volume-slider">
-            <input id="priceVolume" type="range" name="employees" min="500" max="10000" value="500" step="500" class="volume">
-          </form>
-        </div>
-        <p><span id="priceOutput">500</span> employees</p>
-      </div>
+  <div class="container" id="pricing-area">
+    <h3>Your subscription details</h3>
+    <p>Use the price calculator to see how little Umbrella Analytics would cost you based on your business size and the product strands you're interested in. These plans should suit companies from 100 to 10,000 employees, or even more.</p>
+    <div class="price-toggle-wrapper">
+      <span id="monthly" class="pricing-toggle-button month">Pay monthly</span>
+      <span id="annually" class="pricing-toggle-button year active">Pay annually</span>
     </div>
-    <div class="text-center heading-title">
-      <h3 class="text-primary">Pick your strands</h3>
+    <div class="mt-5 price-volume-card">
+      <p>How many people are in your business?</p>
+      <div class="price-volume-wrapper">
+        <form class="volume-slider">
+          <input id="priceVolume" type="range" name="employees" min="500" max="10000" value="500" step="500" class="volume">
+        </form>
+      </div>
+      <p><span id="priceOutput">500</span></p>
     </div>
+    <h3 class="text-primary">Pick your strands</h3>
     <div class="row" id="price-table">
       <div class="item col-12 col-lg-4">
         <div class="pricing-item wow fadeInLeft animated" data-wow-delay="100ms">

@@ -16,7 +16,9 @@ body {
     color: $white;
   }
 
-  a, a:focus, a:hover {
+  a,
+  a:focus,
+  a:hover {
     outline: none;
     text-decoration: none;
     color: $primary;
@@ -26,7 +28,10 @@ body {
     text-decoration: underline;
   }
 
-  button:active, button:focus, input:active, input:focus {
+  button:active,
+  button:focus,
+  input:active,
+  input:focus {
     outline: none;
     box-shadow: none;
   }
@@ -106,7 +111,12 @@ body {
     font-size: 60%;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $font-family-heading;
     font-weight: bold;
     margin: 0;
@@ -453,7 +463,8 @@ nav.navbar {
         flex-direction: column;
         justify-content: center;
 
-        h1, h2 {
+        h1,
+        h2 {
           color: $white;
         }
       }
@@ -784,7 +795,6 @@ footer {
     .footer-panel {
       text-align: left;
       margin: 30px;
-
       @media (min-width: map-get($grid-breakpoints, 'lg')) {
         text-align: right;
         margin: 0;
@@ -816,7 +826,8 @@ footer {
           }
         }
 
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
           color: $secondary;
         }
       }
@@ -830,7 +841,7 @@ footer {
   #about-us {
     #our-process {
       background-color: $primary;
-      padding: 90px 0 70px 0;
+      padding: 90px 0 70px;
       color: $white;
 
       h2 {
@@ -843,7 +854,7 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        margin: 30px 0 0 0;
+        margin: 30px 0 0;
         padding: 0;
 
         li {
@@ -879,7 +890,7 @@ footer {
           }
 
           div.text {
-            padding: 30px 30px 0 30px;
+            padding: 30px 30px 0;
 
             h3 {
               font-size: 1.3rem;
@@ -956,7 +967,7 @@ footer {
 
           .video-container {
             img {
-              top: 0px;
+              top: 0;
             }
 
             a.play-button {
@@ -1071,11 +1082,11 @@ footer {
     }
 
     h3 {
-      padding: 10px 0 0 0;
+      padding: 10px 0 0;
     }
 
     h4 {
-      padding: 30px 0 10px 0;
+      padding: 30px 0 10px;
     }
 
     p {
@@ -1098,8 +1109,6 @@ footer {
 
     .contact-details {
       text-align: left;
-
-
     }
   }
 
@@ -1114,7 +1123,6 @@ footer {
   }
 
   .legal {
-
     h3.numbered-list::before {
       counter-increment: h3;
       content: counter(h3) ". ";
@@ -1130,7 +1138,211 @@ footer {
   }
 
   #narrow-column {
-    padding: 0 90px 90px 90px;
+    padding: 0 90px 90px;
+  }
+
+  #pricing-area {
+    text-align: center;
+    padding: 90px 0;
+
+    h3 {
+      color: $primary;
+    }
+
+    .price-toggle-wrapper {
+      position: relative;
+      background: $white;
+      border: 0;
+      border-radius: 30px;
+      overflow: hidden;
+      display: inline-flex;
+      background-color: $light;
+      margin-top: 30px;
+
+      .pricing-toggle-button {
+        padding: 10px 110px;
+        user-select: none;
+        cursor: pointer;
+        z-index: 1;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+
+        &.active {
+          color: $white;
+          cursor: default;
+        }
+
+        &.month {
+          &::before {
+            content: '';
+            position: absolute;
+            width: 105%;
+            height: 100%;
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            overflow: hidden;
+            transform: translateX(95%);
+            z-index: -1;
+            -webkit-background-size: 200% auto;
+            background-size: 200% auto;
+            @include background-gradient-secondary;
+            background-position: right center;
+          }
+
+          &.active::before {
+            transform: translateX(-5%);
+            background-position: left center;
+          }
+        }
+      }
+    }
+
+    .price-volume-card {
+      background-color: $white;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 0 400px;
+
+      #priceVolume {
+        -webkit-appearance: none;
+        margin: -4px 0;
+        border: none;
+        background: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 34px;
+          cursor: pointer;
+          box-shadow: 0 0 0 $secondary, 0 0 0 lighten($secondary, 10%);
+          @include background-gradient-secondary;
+          border-radius: 17px;
+          padding: 4px;
+        }
+
+        &::-webkit-slider-thumb {
+          box-shadow: 0 0 0 $secondary, 0 0 0 lighten($secondary, 10%);
+          border: 0 solid $secondary;
+          height: 26px;
+          width: 26px;
+          border-radius: 13px;
+          background: #ffffff;
+          cursor: pointer;
+          -webkit-appearance: none;
+          margin-top: 0;
+        }
+
+        &::-moz-range-track {
+          width: 100%;
+          height: 34px;
+          cursor: pointer;
+          box-shadow: 0 0 0 #ffb2df, 0 0 0 #ffccea;
+          background: $secondary;
+          border-radius: 17px;
+          border: 4px solid $secondary;
+        }
+
+        &::-moz-range-thumb {
+          box-shadow: 0 0 0 $secondary, 0 0 0 lighten($secondary, 10%);
+          border: 0 solid $secondary;
+          height: 26px;
+          width: 26px;
+          border-radius: 13px;
+          background: #ffffff;
+          cursor: pointer;
+        }
+
+        &::-ms-track {
+          width: 100%;
+          height: 34px;
+          cursor: pointer;
+          background: transparent;
+          border-color: transparent;
+          color: transparent;
+        }
+
+        &::-ms-fill-lower {
+          background: darken($secondary, 10%);
+          border: 4px solid $secondary;
+          border-radius: 34px;
+          box-shadow: 0 0 0 $secondary, 0 0 0 lighten($secondary, 10%);
+        }
+
+        &::-ms-fill-upper {
+          background: $secondary;
+          border: 4px solid $secondary;
+          border-radius: 34px;
+          box-shadow: 0 0 0 $secondary, 0 0 0 lighten($secondary, 10%);
+        }
+
+        &::-ms-thumb {
+          box-shadow: 0 0 0 $secondary, 0 0 0 lighten($secondary, 10%);
+          border: 0 solid $secondary;
+          width: 26px;
+          border-radius: 13px;
+          background: #ffffff;
+          cursor: pointer;
+          height: 26px;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      .pricing-item .pricing-currency {
+        font-size: 2.5rem;
+      }
+
+      .price-volume-card {
+        margin: 0 200px;
+      }
+
+      .pricing-list li {
+        font-size: 0.9375rem;
+      }
+
+      .price-toggle-wrapper {
+        .pricing-toggle-button {
+          padding: 10px 70px;
+        }
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      .price-toggle-wrapper {
+        .pricing-toggle-button {
+          padding: 10px 40px;
+          font-size: 13px;
+        }
+      }
+
+      .price-volume-card {
+        margin: 0 100px;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      .price-toggle-wrapper {
+        .pricing-toggle-button {
+          padding: 10px 30px;
+        }
+      }
+
+      .price-volume-card {
+        margin: 0;
+      }
+    }
   }
 
   #services {
@@ -1151,7 +1363,7 @@ footer {
     }
 
     #service-tabs {
-      margin: 60px 0 30px 0;
+      margin: 60px 0 30px;
 
       .nav-tabs {
         justify-content: center;
@@ -1193,7 +1405,7 @@ footer {
     }
 
     p.cta-button {
-      margin: 30px 0 60px 0;
+      margin: 30px 0 60px;
       text-align: center;
     }
   }
