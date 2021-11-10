@@ -159,6 +159,7 @@ body {
 
   .card.decorated {
     position: relative;
+    height: 100%;
     border-color: $primary;
     text-align: center;
 
@@ -1125,6 +1126,63 @@ footer {
 
   #narrow-column {
     padding: 0 90px 90px 90px;
+  }
+
+  #services {
+    h2 {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .card-row {
+      margin-bottom: 90px;
+
+      .card {
+        h3 {
+          text-align: center;
+          color: $primary;
+        }
+      }
+    }
+
+    #service-tabs {
+      margin: 60px 0 30px 0;
+
+      .nav-tabs {
+        justify-content: center;
+        border: none;
+
+        .nav-item {
+          background-color: $light-primary;
+          border-color: $primary;
+          border-radius: $dropdown-border-radius $dropdown-border-radius 0 0;
+          margin: 0 1px;
+
+          a {
+            text-decoration: none;
+            color: $dark;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          .active {
+            background-color: $primary;
+            color: $white;
+          }
+        }
+      }
+
+      .card {
+        border-color: $mid-primary;
+        padding: 30px;
+      }
+    }
+
+    .spacer {
+      min-height: 60px;
+    }
   }
 
   #use-cases {
