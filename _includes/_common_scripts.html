@@ -52,4 +52,38 @@
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
+
+  // Pricing table
+  function newSubPrice(volume) {
+    let priceMultiplier = (document.querySelector('#monthly').classList.contains('active') ? 1.2 : 1);
+    console.log(priceMultiplier);
+    return Math.round((volume * priceMultiplier) / 12);
+  }
+
+  function changeContentOfTwoItems(collection, newContent) {
+    collection[0].textContent = newContent;
+    collection[1].textContent = newContent;
+  }
+
+  function changeActiveClassOfTwoItems(collection) {
+    collection[0].classList.toggle('active');
+    collection[1].classList.toggle('active');
+  }
+
+  function pricingToggleButtonClicker() {
+    const volume = document.querySelector("#priceVolume").value;
+    changeActiveClassOfTwoItems(document.querySelectorAll("#price-toggle-wrapper span"));
+    const price = newSubPrice(volume);
+    changeContentOfTwoItems(document.getElementsByClassName('priceCaveat'), ' ');
+    changeContentOfTwoItems(document.getElementsByClassName('calculatedPrice'), "£" + price);
+  }
+
+  function priceVolumeClicker() {
+    const volume = document.querySelector("#priceVolume").value;
+    const price = newSubPrice(volume);
+    document.querySelector('#priceOutput').textContent = volume;
+    changeContentOfTwoItems(document.getElementsByClassName('priceCaveat'), ' ');
+    changeContentOfTwoItems(document.getElementsByClassName('calculatedPrice'), "£" + price);
+    changeContentOfTwoItems(document.getElementsByClassName('planPages'), volume);
+  }
 </script>

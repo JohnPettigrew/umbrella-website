@@ -1219,18 +1219,11 @@ footer {
         font-size: 14px;
         font-weight: bold;
         position: relative;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-
-        &.active {
-          cursor: default;
-        }
 
         &.month {
           &::before {
             content: '';
+            @include transition-general;
             position: absolute;
             width: 105%;
             height: 100%;

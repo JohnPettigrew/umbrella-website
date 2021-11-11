@@ -8,18 +8,20 @@ banner-alt-text: Drawing of a woman carrying a piggy bank. (By Pixeltrue from Ou
 
 <section id="single-column-area">
   <div class="container text-center mb-5">
-    <h2>Get started for free</h2>
+    <h2 class="mb-2">Get started for free</h2>
     <p><strong>Free</strong> to use to generate UK statutory gender pay reports, to try out one job advert, and to access our sample data visualisations.</p>
-    <h3 class="mt-4 fw-normal">Bundle and save</h3>
-    <p>Subscribe to both the Visualise and Analyse strands, and get <strong>10%</strong> off your total bill.</strong>!</p>
+    <p>Subscribe from <strong>just £1 per person per year</strong>, with plans to suit all sizes of business - from those with a hundred people to tens of thousands!<br />
+      (Our lowest subscription levels include 500 people, and start at just £42 a month.)</p>
+    <h3 class="mt-4 fw-normal">Bundle and save!</h3>
+    <p>Subscribe to both the Visualise and Analyse strands, and get <strong>10%</strong> off your total bill.</p>
   </div>
 
   {% include _logo_lines.html %}
 
   <div class="container" id="pricing-area">
     <h3>Your subscription details</h3>
-    <p>Use the price calculator to see how little Umbrella Analytics would cost you based on your business size and the product strands you're interested in. These plans should suit companies from 100 to 10,000 employees, or even more.</p>
-    <div id="price-toggle-wrapper">
+    <p>Use the price calculator to see how little Umbrella Analytics would cost you based on your business size and the product strands you're interested in.</p>
+    <div id="price-toggle-wrapper" onclick="pricingToggleButtonClicker();">
       <span id="monthly" class="pricing-toggle-button month">Pay monthly</span>
       <span id="annually" class="pricing-toggle-button year active">Pay annually</span>
     </div>
@@ -27,7 +29,7 @@ banner-alt-text: Drawing of a woman carrying a piggy bank. (By Pixeltrue from Ou
       <p>How many people are in your business?</p>
       <div id="price-volume-wrapper">
         <form class="volume-slider">
-          <input id="priceVolume" type="range" name="employees" min="500" max="10000" value="500" step="500" class="volume">
+          <input id="priceVolume" type="range" name="employees" min="500" max="5000" value="500" step="500" class="volume" onclick="priceVolumeClicker();">
         </form>
       </div>
       <p><span id="priceOutput">500</span></p>
@@ -40,7 +42,7 @@ banner-alt-text: Drawing of a woman carrying a piggy bank. (By Pixeltrue from Ou
             <h4>Visualise</h4>
             <p>Upload and share data</p>
             <p class="pricing-price">
-              <span class="priceCaveat">From</span><span class="calculatedPrice pricing-currency"> £39</span> /<span class="pricing-duration">month</span>
+              <span class="priceCaveat">From</span><span class="calculatedPrice pricing-currency"> £42</span> /<span class="pricing-duration">month</span>
             </p>
             <ul>
               <li>Up to <strong><span class="planPages">500</span></strong> employees</li>
@@ -58,7 +60,7 @@ banner-alt-text: Drawing of a woman carrying a piggy bank. (By Pixeltrue from Ou
           <div class="card">
             <h4>Analyse</h4>
             <p>Create and track documents</p>
-            <p class="pricing-price"><span class="priceCaveat">From</span><span class="calculatedPrice pricing-currency"> £39</span> /<span class="pricing-duration">month</span></p>
+            <p class="pricing-price"><span class="priceCaveat">From</span><span class="calculatedPrice pricing-currency"> £42</span> /<span class="pricing-duration">month</span></p>
             <ul>
               <li>Up to <strong><span class="planPages">500</span></strong> employees</li>
               <li>Unlimited job adverts</li>
