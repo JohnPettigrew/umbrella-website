@@ -108,30 +108,25 @@ body {
   }
 
   small {
-    font-size: 60%;
+    font-size: 0.6rem;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-heading;
     font-weight: bold;
     margin: 0;
   }
 
   h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
     font-size: 2rem;
   }
 
+  h2 {
+    font-size: 1.6rem;
+  }
+
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   h4 {
@@ -421,14 +416,11 @@ nav.navbar {
       padding: 0;
       opacity: 0;
       @include transition-general;
+      transition-delay: 0.15s;
 
       &.loaded {
         opacity: 1;
       }
-    }
-
-    div#hero-text {
-      transition-delay: 0.15s;
 
       h1 {
         color: $white;
@@ -438,11 +430,21 @@ nav.navbar {
       h2 {
         color: $white;
         text-align: center;
-        font-size: 2.5rem;
         font-weight: normal;
       }
+
       @media (max-width: map-get($grid-breakpoints, 'lg')) {
         min-height: 50vh;
+      }
+
+      @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        h1 {
+          font-size: 3rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -463,9 +465,12 @@ nav.navbar {
         flex-direction: column;
         justify-content: center;
 
-        h1,
-        h2 {
+        h1, h2 {
           color: $white;
+        }
+
+        h2 {
+          font-weight: normal;
         }
       }
     }
@@ -1122,6 +1127,53 @@ footer {
     }
   }
 
+  #faq {
+    padding: 60px 0;
+
+    h2 {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    #accordion {
+      border-radius: $dropdown-border-radius;
+      border: 1px solid $light;
+
+      .card {
+        border-radius: 0;
+        border: none;
+
+        .card-header {
+          border-radius: 0;
+          padding: 0;
+          background-color: $light-primary;
+
+          &:hover {
+            background-color: $mid-primary;
+          }
+
+          a.accordion-button {
+            color: $dark;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: inherit;
+            box-shadow: none;
+            @include transition-general;
+
+            &::after {
+              top: 0.5rem;
+              right: 1rem;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .legal {
     h3.numbered-list::before {
       counter-increment: h3;
@@ -1143,20 +1195,20 @@ footer {
 
   #pricing-area {
     text-align: center;
-    padding: 90px 0;
+    padding: 60px 0;
 
     h3 {
       color: $primary;
     }
 
-    .price-toggle-wrapper {
+    #price-toggle-wrapper {
       position: relative;
-      background: $white;
       border: 0;
       border-radius: 30px;
       overflow: hidden;
       display: inline-flex;
-      background-color: $light;
+      background-color: $dark;
+      color: $white;
       margin-top: 30px;
 
       .pricing-toggle-button {
@@ -1173,7 +1225,6 @@ footer {
         transition: 0.3s;
 
         &.active {
-          color: $white;
           cursor: default;
         }
 
@@ -1203,10 +1254,23 @@ footer {
             background-position: left center;
           }
         }
+
+        @media (max-width: map-get($grid-breakpoints, 'lg')) {
+          padding: 10px 70px;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, 'md')) {
+          padding: 10px 40px;
+          font-size: 13px;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, 'sm')) {
+          padding: 10px 30px;
+        }
       }
     }
 
-    .price-volume-card {
+    #price-volume-card {
       background-color: $white;
       border-radius: 20px;
       padding: 20px;
@@ -1298,50 +1362,110 @@ footer {
           height: 26px;
         }
       }
-    }
-    @media (max-width: map-get($grid-breakpoints, 'lg')) {
-      .pricing-item .pricing-currency {
-        font-size: 2.5rem;
-      }
 
-      .price-volume-card {
+      @media (max-width: map-get($grid-breakpoints, 'lg')) {
         margin: 0 200px;
       }
 
-      .pricing-list li {
-        font-size: 0.9375rem;
-      }
-
-      .price-toggle-wrapper {
-        .pricing-toggle-button {
-          padding: 10px 70px;
-        }
-      }
-    }
-
-    @media (max-width: map-get($grid-breakpoints, 'md')) {
-      .price-toggle-wrapper {
-        .pricing-toggle-button {
-          padding: 10px 40px;
-          font-size: 13px;
-        }
-      }
-
-      .price-volume-card {
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
         margin: 0 100px;
       }
-    }
 
-    @media (max-width: map-get($grid-breakpoints, 'sm')) {
-      .price-toggle-wrapper {
-        .pricing-toggle-button {
-          padding: 10px 30px;
-        }
-      }
-
-      .price-volume-card {
+      @media (max-width: map-get($grid-breakpoints, 'sm')) {
         margin: 0;
       }
+    }
+
+    #price-table {
+      h3 {
+        color: $primary;
+        margin: 30px 0;
+      }
+
+      .card {
+        padding: 45px;
+        border: none;
+        box-shadow: 0 0 10px 0 rgba(0,0,0, 0.12);
+        @include transition-general;
+
+        &:hover {
+          background-color: $primary;
+          color: $white;
+
+          .btn {
+            @include background-gradient-secondary;
+          }
+        }
+
+        h4 {
+          font-weight: normal;
+          margin-bottom: 20px;
+        }
+
+        .pricing-price {
+          padding: 15px 0;
+          border-top: 1px solid $light;
+          border-bottom: 1px solid $light;
+
+          .pricing-currency {
+            font-size: 3rem;
+
+            @media (max-width: map-get($grid-breakpoints, 'lg')) {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          text-align: left;
+          line-height: 2.5;
+
+          li {
+            &::before {
+              display: inline-block;
+              font-weight: bold;
+              content: "✓";
+              padding-right: 10px;
+              color: $primary;
+            }
+
+            i {
+              color: $mid-gray;
+            }
+
+            @media (max-width: map-get($grid-breakpoints, 'lg')) {
+              font-size: 0.9375rem;
+            }
+          }
+        }
+
+        .btn {
+          @include background-gradient-primary;
+        }
+
+        &.footnotes {
+          margin-top: 30px;
+
+          i {
+            color: $mid-gray;
+          }
+        }
+      }
+    }
+  }
+
+  #pricing-extras {
+    margin-bottom: 60px;
+
+    h2 {
+      color: $primary;
+      margin-bottom: 30px;
+    }
+
+    i {
+      color: $mid-gray;
     }
   }
 
