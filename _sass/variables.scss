@@ -6,21 +6,25 @@ $blue: #6a8daa;
 $orange: #ffb350;
 $brown: #8E6A49;
 
-$light-gray: #d2d3db;
+$light: #d2d3db;
 $mid-gray: #9a9bad;
 $dark-gray: #65667c;
-$darkest-gray: #373844;
+$dark: #373844;
 
 $primary: $green;
-$secondary: $darkest-gray;
-$tertiary: $orange;
+$secondary: $orange;
+$tertiary: $dark;
 $info: $blue;
 
-$light: $light-gray;
-$light-primary: #a7d3bC;
-$light-tertiary: lighten($tertiary, 10%);
+$mid-primary: lighten($primary, 10%);
+$mid-secondary: lighten($secondary, 10%);
+$light-primary: lighten($primary, 25%);
+$light-secondary: lighten($secondary, 25%);
 
-$font-size-base: 1 rem;
+$font-size-base: 1rem;
+
+$logolines-height: 30px;
+$navbar-height: 70px;
 
 // Fonts
 @font-face {
@@ -72,21 +76,32 @@ $font-family-heading: Mont, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 // Mixins
 
 @mixin text-with-2px-dark-shadow {
-  text-shadow: 0 0 2px $darkest-gray;
+  text-shadow: 0 0 2px $dark;
+}
+
+@mixin transition-general {
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @mixin background-gradient-primary {
-  background-image: -webkit-gradient(linear, left top, right top, from($primary), color-stop(51%, $light-primary), to($primary));
-  background-image: -webkit-linear-gradient(left, $primary 0%, $light-primary 51%, $primary 100%);
-  background-image: -moz-linear-gradient(left, $primary 0%, $light-primary 51%, $primary 100%);
-  background-image: -o-linear-gradient(left, $primary 0%, $light-primary 51%, $primary 100%);
-  background-image: linear-gradient(to right, $primary 0%, $light-primary 51%, $primary 100%);
+  -webkit-background-size: 200% auto;
+  background-size: 200% auto;
+  background-image: -webkit-gradient(linear, left top, right top, from($primary), color-stop(51%, $mid-primary), to($primary));
+  background-image: -webkit-linear-gradient(left, $primary 0%, $mid-primary 51%, $primary 100%);
+  background-image: -moz-linear-gradient(left, $primary 0%, $mid-primary 51%, $primary 100%);
+  background-image: -o-linear-gradient(left, $primary 0%, $mid-primary 51%, $primary 100%);
+  background-image: linear-gradient(to right, $primary 0%, $mid-primary 51%, $primary 100%);
 }
 
-@mixin background-gradient-tertiary {
-  background-image: -webkit-gradient(linear, left top, right top, from($tertiary), color-stop(51%, $light-tertiary), to($tertiary));
-  background-image: -webkit-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
-  background-image: -moz-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
-  background-image: -o-linear-gradient(left, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
-  background-image: linear-gradient(to right, $tertiary 0%, $light-tertiary 51%, $tertiary 100%);
+@mixin background-gradient-secondary {
+  -webkit-background-size: 200% auto;
+  background-size: 200% auto;
+  background-image: -webkit-gradient(linear, left top, right top, from($secondary), color-stop(51%, $mid-secondary), to($secondary));
+  background-image: -webkit-linear-gradient(left, $secondary 0%, $mid-secondary 51%, $secondary 100%);
+  background-image: -moz-linear-gradient(left, $secondary 0%, $mid-secondary 51%, $secondary 100%);
+  background-image: -o-linear-gradient(left, $secondary 0%, $mid-secondary 51%, $secondary 100%);
+  background-image: linear-gradient(to right, $secondary 0%, $mid-secondary 51%, $secondary 100%);
 }
