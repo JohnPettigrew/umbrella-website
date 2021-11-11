@@ -162,24 +162,29 @@ body {
     }
   }
 
-  .card.decorated {
-    position: relative;
-    height: 100%;
-    border-color: $primary;
-    text-align: center;
+  .card {
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0,0,0, 0.12);
 
-    p.decorative-icon {
-      font-size: 4rem;
-      color: $primary;
-      width: 100%;
-      position: absolute;
-      top: -3.5rem;
-    }
+    &.decorated {
+      position: relative;
+      height: 100%;
+      border-color: $primary;
+      text-align: center;
 
-    .card-body {
-      padding-top: 30px;
+      p.decorative-icon {
+        font-size: 4rem;
+        color: $primary;
+        width: 100%;
+        position: absolute;
+        top: -3.5rem;
+      }
+
+      .card-body {
+        padding-top: 30px;
+      }
     }
-  }
+}
 
   .container {
     max-width: 1140px;
@@ -327,7 +332,12 @@ nav.navbar {
       }
     }
   }
+
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    & {
+      padding: 0 30px;
+    }
+
     .offcanvas-collapse {
       position: fixed;
       top: $navbar-height;
@@ -384,7 +394,7 @@ nav.navbar {
               padding: 0;
 
               a.dropdown-item {
-                color: $dark;
+                color: $white;
                 width: 100%;
 
                 &:hover {}
@@ -1137,11 +1147,12 @@ footer {
 
     #accordion {
       border-radius: $dropdown-border-radius;
-      border: 1px solid $light;
+      box-shadow: 0 0 10px 0 rgba(0,0,0, 0.12);
 
       .card {
         border-radius: 0;
         border: none;
+        box-shadow: none;
 
         .card-header {
           border-radius: 0;
@@ -1377,8 +1388,6 @@ footer {
 
       .card {
         padding: 45px;
-        border: none;
-        box-shadow: 0 0 10px 0 rgba(0,0,0, 0.12);
         @include transition-general;
 
         &:hover {
@@ -1509,7 +1518,8 @@ footer {
       }
 
       .card {
-        border-color: $mid-primary;
+        border: 1px solid $mid-primary;
+        box-shadow: none;
         padding: 30px;
       }
     }
