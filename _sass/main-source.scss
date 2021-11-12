@@ -127,14 +127,17 @@ body {
 
       &.border-first {
         border-color: $red;
+        background-color: $red;
       }
 
       &.border-second {
         border-color: $orange;
+        background-color: $orange;
       }
 
       &.border-third {
         border-color: $green;
+        background-color: $green;
       }
     }
   }
@@ -1286,12 +1289,16 @@ footer {
   }
 
   #narrow-column {
-    padding: 0 90px 90px;
+    padding: 0 90px 60px 90px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 10px 60px 10px;
+    }
   }
 
   #pricing-area {
     text-align: center;
-    padding: 60px 0;
+    padding: 60px 10px;
 
     h3 {
       color: $primary;
@@ -1471,16 +1478,24 @@ footer {
         margin: 30px 0;
       }
 
+      div.row > div {
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
       .card {
         padding: 45px;
+        height: 100%;
         @include transition-general;
 
         &:hover {
           background-color: $primary;
           color: $white;
 
-          .btn {
-            @include background-gradient-secondary;
+          .bottom-align-item {
+            .btn {
+              @include background-gradient-secondary;
+            }
           }
         }
 
@@ -1528,13 +1543,20 @@ footer {
           }
         }
 
-        .btn {
-          @include background-gradient-primary;
+        .bottom-align-item {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: center;
+
+          .btn {
+            align-self: flex-end;
+            @include background-gradient-primary;
+          }
         }
 
         &.footnotes {
-          margin-top: 30px;
-
           i {
             color: $mid-gray;
           }
