@@ -16,6 +16,13 @@ body {
     color: $white;
   }
 
+  h1, h2 {
+    span {
+      color: $primary;
+      font-weight: normal;
+    }
+  }
+
   a,
   a:focus,
   a:hover {
@@ -38,7 +45,7 @@ body {
 
   .btn {
     min-height: 45px;
-    max-height: 45px;
+    max-height: 90px;
     min-width: 180px;
     font-family: $font-family-heading;
     font-size: 1.3rem;
@@ -111,36 +118,6 @@ body {
     font-size: 0.6rem;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-heading;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  h4 {
-    font-size: 1.125rem;
-  }
-
-  h5 {
-    font-size: 1rem;
-  }
-
-  h6 {
-    font-size: 0.875rem;
-  }
-
   hr {
     &.logo-lines {
       border: 5px solid $dark;
@@ -184,11 +161,10 @@ body {
         padding-top: 30px;
       }
     }
-}
+  }
 
   .container {
     max-width: 1140px;
-    padding: 0;
   }
 
   .spacer {
@@ -253,8 +229,6 @@ nav.navbar {
     }
 
     ul.navbar-nav {
-      color: $dark;
-
       li {
         a {
           color: $dark;
@@ -333,7 +307,7 @@ nav.navbar {
     }
   }
 
-  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+  @include media-breakpoint-down(lg) {
     & {
       padding: 0 30px;
     }
@@ -373,8 +347,10 @@ nav.navbar {
 
           a {
             border-bottom: none;
+            color: $white;
 
             &:hover {
+              color: $white;
               background-color: inherit;
               text-decoration: underline;
             }
@@ -396,9 +372,15 @@ nav.navbar {
               a.dropdown-item {
                 color: $white;
                 width: 100%;
-
-                &:hover {}
               }
+            }
+          }
+        }
+
+        &.scrolled {
+          li {
+            a {
+              color: $white;
             }
           }
         }
@@ -409,6 +391,7 @@ nav.navbar {
 
 #main-banner-area {
   background-color: $dark;
+  width: 100vw;
   padding: 0;
 
   .outer-banner {
@@ -416,14 +399,13 @@ nav.navbar {
     flex-direction: column;
     justify-content: space-between;
 
-    div#hero-image,
-    div#hero-text {
+    div#hero-image, div#hero-text {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       min-height: calc(100vh - #{$navbar-height + $logolines-height});
-      padding: 0;
+      padding: 0 10px;
       opacity: 0;
       @include transition-general;
       transition-delay: 0.15s;
@@ -431,7 +413,9 @@ nav.navbar {
       &.loaded {
         opacity: 1;
       }
+    }
 
+    div#hero-text {
       h1 {
         color: $white;
         text-align: center;
@@ -443,17 +427,32 @@ nav.navbar {
         font-weight: normal;
       }
 
-      @media (max-width: map-get($grid-breakpoints, 'lg')) {
-        min-height: 50vh;
-      }
-
-      @media (min-width: map-get($grid-breakpoints, 'lg')) {
+      @include media-breakpoint-up(md) {
         h1 {
           font-size: 3rem;
         }
 
         h2 {
           font-size: 2rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      div#hero-image, div#hero-text {
+        min-height: 600px;
+        max-height: 750px;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      div#hero-image, div#hero-text {
+        min-height: 25vh;
+        max-height: 25vh;
+        height: 25vh;
+
+        img {
+          height: 100%;
         }
       }
     }
@@ -540,11 +539,10 @@ nav.navbar {
 
   &.loaded {
     top: -150px;
-    @media (max-width: map-get($grid-breakpoints, 'md')) {
-      & {
-        top: -75px;
-        margin-bottom: -75px;
-      }
+
+    @include media-breakpoint-down(md) {
+      top: -100px;
+      margin-bottom: -100px;
     }
   }
 
@@ -574,7 +572,7 @@ nav.navbar {
       border-top-right-radius: $dropdown-border-radius;
       border-bottom-right-radius: $dropdown-border-radius;
     }
-    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    @include media-breakpoint-down(lg) {
       & {
         min-height: 150px;
         padding: 10px 30px;
@@ -631,6 +629,10 @@ nav.navbar {
     padding-bottom: 30px;
   }
 
+  .image {
+    margin: auto;
+  }
+
   .btn {
     margin: 30px 0;
   }
@@ -658,32 +660,54 @@ nav.navbar {
         font-weight: normal;
       }
 
-      .video-container {
-        img {
-          top: 100px;
-          background-color: $primary;
-          border-radius: $dropdown-border-radius;
+      .video-area {
+        min-height: 350px;
+
+        .video-container {
+          img {
+            top: 100px;
+            background-color: $primary;
+            border-radius: $dropdown-border-radius;
+            max-width: 100%;
+
+            @include media-breakpoint-down(md) {
+              top: 0;
+            }
+          }
+
+          a.play-button {
+            top: 150px;
+
+            @include media-breakpoint-down(lg) {
+              top: 120px;
+            }
+
+            @include media-breakpoint-down(md) {
+              top: 50px;
+            }
+          }
         }
 
-        a.play-button {
-          top: 150px;
-        }
-      }
+        p.button-container {
+          position: relative;
+          top: 350px;
+          text-align: center;
 
-      p.button-container {
-        position: relative;
-        top: 350px;
-        text-align: center;
+          @include media-breakpoint-down(md) {
+            top: 230px;
+          }
+        }
       }
     }
   }
-  @media (max-width: map-get($grid-breakpoints, 'md')) {
+
+  @include media-breakpoint-down(md) {
     text-align: center;
   }
 }
 
 #social-purpose {
-  padding: 90px 0;
+  padding: 90px 10px;
 
   h2 {
     font-size: 3rem;
@@ -714,10 +738,6 @@ nav.navbar {
   }
 
   #testimonial-company-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 60px;
 
     .wrapper {
@@ -725,6 +745,10 @@ nav.navbar {
       padding: 10px;
       background-color: $light;
       border-radius: $dropdown-border-radius;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -772,7 +796,7 @@ nav.navbar {
   min-height: 240px;
 
   .container {
-    padding: 120px 0;
+    padding: 120px 10px;
 
     h3 {
       padding-bottom: 30px;
@@ -794,6 +818,16 @@ nav.navbar {
     button {
       padding-top: 3px;
     }
+
+    @include media-breakpoint-down(md) {
+      input, button {
+        margin-top: 10px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -810,10 +844,6 @@ footer {
     .footer-panel {
       text-align: left;
       margin: 30px;
-      @media (min-width: map-get($grid-breakpoints, 'lg')) {
-        text-align: right;
-        margin: 0;
-      }
     }
 
     ul.links {
@@ -1259,16 +1289,16 @@ footer {
           }
         }
 
-        @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        @include media-breakpoint-down(lg) {
           padding: 10px 70px;
         }
 
-        @media (max-width: map-get($grid-breakpoints, 'md')) {
+        @include media-breakpoint-down(md) {
           padding: 10px 40px;
           font-size: 13px;
         }
 
-        @media (max-width: map-get($grid-breakpoints, 'sm')) {
+        @include media-breakpoint-down(sm) {
           padding: 10px 30px;
         }
       }
@@ -1367,15 +1397,15 @@ footer {
         }
       }
 
-      @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      @include media-breakpoint-down(lg) {
         margin: 0 200px;
       }
 
-      @media (max-width: map-get($grid-breakpoints, 'md')) {
+      @include media-breakpoint-down(md) {
         margin: 0 100px;
       }
 
-      @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      @include media-breakpoint-down(sm) {
         margin: 0;
       }
     }
@@ -1412,7 +1442,7 @@ footer {
           .pricing-currency {
             font-size: 3rem;
 
-            @media (max-width: map-get($grid-breakpoints, 'lg')) {
+            @include media-breakpoint-down(lg) {
               font-size: 2.5rem;
             }
           }
@@ -1437,7 +1467,7 @@ footer {
               color: $mid-gray;
             }
 
-            @media (max-width: map-get($grid-breakpoints, 'lg')) {
+            @include media-breakpoint-down(lg) {
               font-size: 0.9375rem;
             }
           }
