@@ -146,7 +146,8 @@ body {
     &.decorated {
       position: relative;
       height: 100%;
-      border-color: $primary;
+      border: 1px solid $primary;
+      box-shadow: 0 0 10px 0 rgba(115, 200, 169, 0.12);
       text-align: center;
 
       p.decorative-icon {
@@ -159,6 +160,10 @@ body {
 
       .card-body {
         padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
@@ -389,7 +394,7 @@ nav.navbar {
   }
 }
 
-#main-banner-area {
+#home-page-banner {
   background-color: $dark;
   width: 100vw;
   padding: 0;
@@ -459,28 +464,41 @@ nav.navbar {
   }
 }
 
-#main-page {
+#default-page-banner {
   background-color: $dark;
 
   .container {
     min-height: 250px;
-    justify-content: space-between;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 
     .row {
-      div:nth-of-type(2) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
 
+      div {
         h1, h2 {
           color: $white;
+        }
+
+        h1 {
+          font-weight: bold;
         }
 
         h2 {
           font-weight: normal;
         }
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin-top: 30px;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin: auto 0;
       }
     }
 
@@ -1511,6 +1529,8 @@ footer {
       margin-bottom: 90px;
 
       .card {
+        margin-bottom: 60px;
+
         h3 {
           text-align: center;
           color: $primary;
