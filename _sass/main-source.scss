@@ -1315,8 +1315,8 @@ footer {
       border-radius: 30px;
       overflow: hidden;
       display: inline-flex;
-      background-color: $dark;
-      color: $white;
+      background-color: lighten($light, 10%);
+      color: $dark;
       margin-top: 30px;
 
       .pricing-toggle-button {
