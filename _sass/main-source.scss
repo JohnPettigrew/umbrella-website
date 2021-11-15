@@ -887,30 +887,34 @@ footer {
       margin: auto 0;
       padding-right: 30px;
 
-      li a {
-        position: relative;
-        color: $white;
-        margin-bottom: 10px;
-        font-size: 14px;
+      li {
 
-        &::before {
-          color: $secondary;
-          margin-right: 5px;
-          content: "🞂";
-          vertical-align: baseline;
-        }
-
-        &:hover {
-          text-decoration: none;
+        a {
+          position: relative;
+          color: $white;
+          margin-bottom: 10px;
+          font-size: 14px;
 
           &::before {
-            padding-right: 5px;
+            color: $secondary;
+            margin-right: 5px;
+            content: "🞂";
+            vertical-align: baseline;
+            @include transition-general;
           }
-        }
 
-        &:focus,
-        &:hover {
-          color: $secondary;
+          &:hover {
+            text-decoration: none;
+
+            &::before {
+              padding-right: 5px;
+            }
+          }
+
+          &:focus,
+          &:hover {
+            color: $secondary;
+          }
         }
       }
     }
