@@ -1251,6 +1251,7 @@ footer {
           border-radius: 0;
           padding: 0;
           background-color: $light-primary;
+          cursor: pointer;
 
           &:hover {
             background-color: $mid-primary;
