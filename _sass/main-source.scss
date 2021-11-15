@@ -114,6 +114,11 @@ body {
     }
   }
 
+  blockquote {
+    border-left: 5px solid $primary;
+    padding-left: 20px;
+  }
+
   small {
     font-size: 0.6rem;
   }
@@ -1246,6 +1251,7 @@ footer {
           border-radius: 0;
           padding: 0;
           background-color: $light-primary;
+          cursor: pointer;
 
           &:hover {
             background-color: $mid-primary;
@@ -1310,8 +1316,8 @@ footer {
       border-radius: 30px;
       overflow: hidden;
       display: inline-flex;
-      background-color: $dark;
-      color: $white;
+      background-color: lighten($light, 10%);
+      color: $dark;
       margin-top: 30px;
 
       .pricing-toggle-button {
