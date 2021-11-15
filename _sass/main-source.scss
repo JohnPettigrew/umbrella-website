@@ -114,6 +114,11 @@ body {
     }
   }
 
+  blockquote {
+    border-left: 5px solid $primary;
+    padding-left: 20px;
+  }
+
   small {
     font-size: 0.6rem;
   }
