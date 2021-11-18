@@ -3,7 +3,7 @@ email: info@umbrellaanalytics.net
 description: >- # this means to ignore newlines until "baseurl:"
   Diversity and Inclusion Analytics. Improve diversity and inclusion in your workplace using data.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: ""
+url: "https://www.umbrellaanalytics.net"
 
 plugins:
   - jekyll-gzip
