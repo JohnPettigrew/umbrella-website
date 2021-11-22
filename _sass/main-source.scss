@@ -603,6 +603,12 @@ nav.navbar {
       min-height: 300px;
       padding-top: 52px;
       border-radius: $dropdown-border-radius;
+
+      ::selection {
+        background: $brown !important;
+        opacity: 0.63;
+        color: $white;
+      }
     }
 
     &:last-of-type {
@@ -935,6 +941,12 @@ footer {
       background-color: $primary;
       padding: 90px 0 70px;
       color: $white;
+
+      ::selection {
+        background: $brown !important;
+        opacity: 0.63;
+        color: $white;
+      }
 
       h2 {
         text-align: center;
