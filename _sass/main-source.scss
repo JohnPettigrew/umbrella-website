@@ -535,6 +535,7 @@ nav.navbar {
       top: 30px;
       padding: 0 30px;
       margin-bottom: 0;
+      z-index: 1;
 
       li {
         display: inline-block;
@@ -564,6 +565,13 @@ nav.navbar {
       }
     }
   }
+}
+
+#logo-lines-banner {
+  position: relative;
+  top: -18px;
+  background-color: $dark;
+  z-index: 0;
 }
 
 #key-message-boxes {
@@ -928,7 +936,7 @@ footer {
 }
 
 #single-column-area {
-  padding-top: 90px;
+  padding-top: 70px;
 
   #about-us {
     .w-sm-100 {
