@@ -147,6 +147,23 @@ body {
     }
   }
 
+  ol {
+    list-style: none;
+    counter-reset: li;
+
+    li {
+      counter-increment: li;
+
+      &::before {
+        content: counter(li);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em
+      }
+    }
+  }
+
   .card {
     border: none;
     box-shadow: 0 0 10px 0 rgba(0,0,0, 0.12);
