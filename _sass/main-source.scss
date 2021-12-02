@@ -19,7 +19,6 @@ body {
   h1, h2 {
     span {
       color: $primary;
-      font-weight: normal;
     }
   }
 
@@ -143,6 +142,23 @@ body {
       &.border-third {
         border-color: $green;
         background-color: $green;
+      }
+    }
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: li;
+
+    li {
+      counter-increment: li;
+
+      &::before {
+        content: counter(li);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em
       }
     }
   }
@@ -535,6 +551,7 @@ nav.navbar {
       top: 30px;
       padding: 0 30px;
       margin-bottom: 0;
+      z-index: 1;
 
       li {
         display: inline-block;
@@ -564,6 +581,13 @@ nav.navbar {
       }
     }
   }
+}
+
+#logo-lines-banner {
+  position: relative;
+  top: -18px;
+  background-color: $dark;
+  z-index: 0;
 }
 
 #key-message-boxes {
@@ -928,7 +952,7 @@ footer {
 }
 
 #single-column-area {
-  padding-top: 90px;
+  padding-top: 70px;
 
   #about-us {
     .w-sm-100 {
@@ -1602,13 +1626,10 @@ footer {
 
   #services {
     h2 {
-      text-align: center;
       padding-bottom: 30px;
     }
 
     .card-row {
-      margin-bottom: 90px;
-
       .card {
         margin-bottom: 60px;
 
