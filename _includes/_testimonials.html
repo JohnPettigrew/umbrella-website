@@ -1,22 +1,25 @@
 <section id="testimonials"">
   {% include _logo_lines.html %}
   <div class="container">
-    <h2>Customers <span>around the UK</span></h2>
-    <div id="testimonial-company-list" class="row">
-      <div class="col-6 col-md-3">
-        <p class="wrapper"><a href="https://www.bu-uk.co.uk/"><img src="/images/customers-users/customer_logo_buuk.png" width="150" height="59" alt="BU-UK Last Mile Networks"></a></p>
-      </div>
-      <div class="col-6 col-md-3">
-        <p class="wrapper"><a href="https://www.wiley.com/"><img src="/images/customers-users/customer_logo_wiley.png" width="150" height="31" alt="Wiley Publishing" alt="Wiley"></a></p>
-      </div>
-      <div class="col-6 col-md-3">
-        <p class="wrapper"><a href="https://www.escapethecity.org/"><img src="/images/customers-users/customer_logo_escape_the_city.svg" width="128" height="80" alt="Escape the City"></a></p>
-      </div>
-      <div class="col-6 col-md-3">
-        <p class="wrapper"><a href="https://www.bibbyfinancialservices.com/"><img src="/images/customers-users/customer_logo_bibby.png" width="150" height="43" alt="Bibby Financial Services"></a></p>
-      </div>
+  <h2>Customers <span>around the UK</span></h2>
+  <div id="testimonial-company-list" class="row">
+    <div class="col-6 col-lg-2 offset-lg-1">
+      <p class="wrapper"><a href="https://www.bu-uk.co.uk/"><img src="/images/customers-users/customer_logo_buuk.png" width="150" height="59" alt="BU-UK Last Mile Networks"></a></p>
     </div>
-    <!-- <div id="testimonial-carousel-wrapper">
+    <div class="col-6 col-lg-2">
+      <p class="wrapper"><a href="https://www.wiley.com/"><img src="/images/customers-users/customer_logo_wiley.png" width="150" height="31" alt="Wiley Publishing" alt="Wiley"></a></p>
+    </div>
+    <div class="col-6 col-lg-2">
+      <p class="wrapper"><a href="https://www.bookmachine.org/"><img src="/images/customers-users/customer_logo_bookmachine.png" width="80" height="80" alt="BookMachine" alt="Wiley"></a></p>
+    </div>
+    <div class="col-6 col-lg-2">
+      <p class="wrapper"><a href="https://www.escapethecity.org/"><img src="/images/customers-users/customer_logo_escape_the_city.svg" width="128" height="80" alt="Escape the City"></a></p>
+    </div>
+    <div class="col-6 col-lg-2">
+      <p class="wrapper"><a href="https://www.bibbyfinancialservices.com/"><img src="/images/customers-users/customer_logo_bibby.png" width="150" height="43" alt="Bibby Financial Services"></a></p>
+    </div>
+  </div>
+  <!-- <div id="testimonial-carousel-wrapper">
       <h3>Loved <span class="text-white">by employees, HR teams & senior management</span></h3>
       <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -71,7 +74,33 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div> -->
+    </div>
+    -->
   </div>
   {% include _logo_lines.html %}
 </section>
+
+<script>
+  $(document).ready(function() {
+    $('.testimonial-company-list').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+  });
+</script>
